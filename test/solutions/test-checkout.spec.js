@@ -39,4 +39,37 @@ describe('checkout', function () {
         //Assert
         expect(total).to.equal(-1);
     });
+
+    it('should calculate an order with freebies', function () {
+        //Setup
+        var order = "BBEE";
+
+        //Test
+        var total = checkout(order);
+
+        //Assert
+        expect(total).to.equal(110);
+    });
+
+    it('should calculate E', function () {
+
+        var order = "E";
+        var total = checkout(order);
+        expect(total).to.equal(40);
+    });
+
+    it('should calculate ABCDE', function () {
+
+        var order = "ABCDE";
+        var total = checkout(order);
+        expect(total).to.equal(155);
+    });
+
+    it('should calculate EE', function () {
+
+        var order = "EE";
+        var total = checkout(order);
+        expect(total).to.equal(80);
+    });
+
 });

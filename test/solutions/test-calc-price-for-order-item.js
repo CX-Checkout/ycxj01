@@ -16,19 +16,21 @@ describe('calc-price-for-order-item', function () {
         // 10 * 15
         expect(total).to.equal(150);
 
-        //--------------------------------
+        //---------------------------------
 
-        // Setup
+        //Setup
         var order = {
             item: 'A',
-            qty: 10
+            qty: 9
         }
 
-        // Test
-        var total = calc(order);
+        //Test
+        var result = calc(order);
+        
+        //Assert
+        // (1 * 200) + (1 * 130) + (1 * 50) = 380
+        expect(result).to.equal(380);
 
-        // (3 * 130) + (1 * 50) = 440
-        expect(total).to.equal(440);
     });
 
     it('should return 0 if it doesn\'t recognise the product', function () {
@@ -59,6 +61,7 @@ describe('calc-price-for-order-item', function () {
         // Assert
         expect(total).to.equal(0);
     });
+
 });
 
 

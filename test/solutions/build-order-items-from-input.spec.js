@@ -2,7 +2,7 @@ var buildOrderItemFromInput = require('../../lib/solutions/build-order-items-fro
 var expect = require('chai').expect;
 var _ = require('lodash');
 
-describe.only('split-sku-input', function () {
+describe.only('build-order-items-from-input', function () {
 
     it('should return an empty order for an empty string', function () {
 
@@ -91,4 +91,5 @@ describe.only('split-sku-input', function () {
         //Assert
         expect(result).to.equal(-1);
     });
+
 });
