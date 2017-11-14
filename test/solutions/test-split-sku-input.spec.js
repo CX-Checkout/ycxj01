@@ -1,4 +1,4 @@
-var checkout = require('../../lib/solutions/split-sku-input');
+var splitSkuInput = require('../../lib/solutions/split-sku-input');
 var expect = require('chai').expect;
 
 describe('split-sku-input', function () {
