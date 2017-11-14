@@ -72,4 +72,33 @@ describe('checkout', function () {
         expect(total).to.equal(80);
     });
 
+    it('should handle same-item-freebies', function () {
+
+        var order = "FFF";
+        var total = checkout(order);
+        expect(total).to.equal(20);
+    });
+
+    it('should handle same-item-freebies and other freebies', function () {
+
+        var order = "BBEEFFFF";
+        var total = checkout(order);
+        expect(total).to.equal(140);
+    });
+
+    it('should handle FFFF', function () {
+
+        var order = "FFFF";
+        var total = checkout(order);
+        expect(total).to.equal(30);
+    });
+
+    it('should handle FFFFFF', function () {
+
+        var order = "FFFFFF";
+        var total = checkout(order);
+        expect(total).to.equal(40);
+    });
+
+
 });

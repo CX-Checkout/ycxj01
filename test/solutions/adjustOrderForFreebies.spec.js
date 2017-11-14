@@ -46,4 +46,21 @@ describe('adjust-order-for-freebies', function () {
         expect(order[1].qty).to.equal(8);
     });
 
+    it('should only deduct for same-item-freebies when there is an extra', function () {
+
+        var order = [
+            {
+                item: 'F',
+                qty: 2
+            }
+        ];
+
+        //Test
+        var adjustedOrder = adjustOrderForFreebies(order);
+
+        //Assert
+        expect(order[0].qty).to.equal(2);
+    });
+
+
 });

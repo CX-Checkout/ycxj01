@@ -50,4 +50,21 @@ describe('calc-order-total', function () {
         expect(total).to.equal(125);
     });
 
+    it('should adjust the order for same-item-freebies', function () {
+
+        var orderItems = [
+            {
+                item: 'F',
+                qty: 3
+            }
+        ];
+
+        //Test
+        var total = calcOrderTotal(orderItems);
+
+        //Assert
+        //2 * 10 = 20
+        expect(total).to.equal(20);
+    });
+
 });
